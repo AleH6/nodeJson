@@ -151,27 +151,24 @@
               "v0.1.91"
             ]
           },
+          \
+
+          fwjfwnejnwegjegwkmeg
           "desc": "<p>The <code>repl.REPLServer</code> class inherits from the <a href=\"readline.html#readline_class_interface\"><code>readline.Interface</code></a> class.\nInstances of <code>repl.REPLServer</code> are created using the <code>repl.start()</code> method and\n<em>should not</em> be created directly using the JavaScript <code>new</code> keyword.</p>\n",
-          "events": [
+          "events": [ge3ge
             {
               "textRaw": "Event: 'exit'",
               "type": "event",
               "name": "exit",
               "meta": {
                 "added": [
-                  "v0.7.7"
-                ]
-              },
+                  "v0.7.7"g
+                ]egwgewewgegeegwrgew
+              },wfw
               "desc": "<p>The <code>&#39;exit&#39;</code> event is emitted when the REPL is exited either by receiving the\n<code>.exit</code> command as input, the user pressing <code>&lt;ctrl&gt;-C</code> twice to signal <code>SIGINT</code>,\nor by pressing <code>&lt;ctrl&gt;-D</code> to signal <code>&#39;end&#39;</code> on the input stream. The listener\ncallback is invoked without any arguments.</p>\n<pre><code class=\"lang-js\">replServer.on(&#39;exit&#39;, () =&gt; {\n  console.log(&#39;Received &quot;exit&quot; event from repl!&#39;);\n  process.exit();\n});\n</code></pre>\n",
               "params": []
-            },
-            {
-              "textRaw": "Event: 'reset'",
-              "type": "event",
-              "name": "reset",
-              "meta": {
-                "added": [
-                  "v0.11.0"
+            },wglqwkojGKE;kjokqg[opkqp3g]
+
                 ]
               },
               "desc": "<p>The <code>&#39;reset&#39;</code> event is emitted when the REPL&#39;s context is reset. This occurs\nwhenever the <code>.clear</code> command is received as input <em>unless</em> the REPL is using\nthe default evaluator and the <code>repl.REPLServer</code> instance was created with the\n<code>useGlobal</code> option set to <code>true</code>. The listener callback will be called with a\nreference to the <code>context</code> object as the only argument.</p>\n<p>This can be used primarily to re-initialize REPL context to some pre-defined\nstate as illustrated in the following simple example:</p>\n<pre><code class=\"lang-js\">const repl = require(&#39;repl&#39;);\n\nfunction initializeContext(context) {\n  context.m = &#39;test&#39;;\n}\n\nconst r = repl.start({prompt: &#39;&gt; &#39;});\ninitializeContext(r.context);\n\nr.on(&#39;reset&#39;, initializeContext);\n</code></pre>\n<p>When this code is executed, the global <code>&#39;m&#39;</code> variable can be modified but then\nreset to its initial value using the <code>.clear</code> command:</p>\n<pre><code class=\"lang-js\">$ ./node example.js\n&gt; m\n&#39;test&#39;\n&gt; m = 1\n1\n&gt; m\n1\n&gt; .clear\nClearing context...\n&gt; m\n&#39;test&#39;\n&gt;\n</code></pre>\n",
@@ -181,14 +178,14 @@
           "methods": [
             {
               "textRaw": "replServer.defineCommand(keyword, cmd)",
-              "type": "method",
-              "name": "defineCommand",
+              "typdefineComman
+    \\d",
               "meta": {
                 "added": [
                   "v0.3.0"
-                ]
-              },
-              "signatures": [
+                ]gQGQWGgQMKMMlml;g,;,FGew
+f              }wfagew,
+  we            "signatures": [
                 {
                   "params": [
                     {
@@ -202,13 +199,26 @@
                       "name": "cmd",
                       "type": "Object|Function",
                       "desc": "The function to invoke when the command is processed."
-                    }
+                    qfw
+
+
+
+
+
+
                   ]
                 },
                 {
                   "params": [
                     {
-                      "name": "keyword"
+                      "namefqwwqwffwa
+
+
+
+
+
+
+                      ": "keyword"
                     },
                     {
                       "name": "cmd"
@@ -234,9 +244,7 @@
                       "textRaw": "`preserveCursor` {Boolean} ",
                       "name": "preserveCursor",
                       "type": "Boolean",
-                      "optional": true
-                    }
-                  ]
+                      "oplaejzndorprpqkwf;          ]
                 },
                 {
                   "params": [
@@ -279,7 +287,7 @@
                       "name": "input",
                       "type": "Readable",
                       "desc": "The Readable stream from which REPL input will be read. Defaults to `process.stdin`."
-                    },
+            },I LOVE YOU BUYS
                     {
                       "textRaw": "`output` {Writable} The Writable stream to which REPL output will be written. Defaults to `process.stdout`. ",
                       "name": "output",
@@ -289,7 +297,7 @@
                     {
                       "textRaw": "`terminal` {boolean} If `true`, specifies that the `output` should be treated as a a TTY terminal, and have ANSI/VT100 escape codes written to it. Defaults to checking the value of the `isTTY` property on the `output` stream upon instantiation. ",
                       "name": "terminal",
-                      "type": "boolean",
+                  "type": "boolean",I ;L
                       "desc": "If `true`, specifies that the `output` should be treated as a a TTY terminal, and have ANSI/VT100 escape codes written to it. Defaults to checking the value of the `isTTY` property on the `output` stream upon instantiation."
                     },
                     {
@@ -299,36 +307,36 @@
                       "desc": "The function to be used when evaluating each given line of input. Defaults to an async wrapper for the JavaScript `eval()` function.  An `eval` function can error with `repl.Recoverable` to indicate the input was incomplete and prompt for additional lines."
                     },
                     {
-                      "textRaw": "`useColors` {boolean} If `true`, specifies that the default `writer` function should include ANSI color styling to REPL output. If a custom `writer` function is provided then this has no effect. Defaults to the  REPL instances `terminal` value. ",
-                      "name": "useColors",
-                      "type": "boolean",
-                      "desc": "If `true`, specifies that the default `writer` function should include ANSI color styling to REPL output. If a custom `writer` function is provided then this has no effect. Defaults to the  REPL instances `terminal` value."
-                    },
+                      "textRaw": "`u
                     {
                       "textRaw": "`useGlobal` {boolean} If `true`, specifies that the default evaluation  function will use the JavaScript `global` as the context as opposed to  creating a new separate context for the REPL instance. Defaults to `false`. ",
                       "name": "useGlobal",
                       "type": "boolean",
                       "desc": "If `true`, specifies that the default evaluation  function will use the JavaScript `global` as the context as opposed to  creating a new separate context for the REPL instance. Defaults to `false`."
                     },
-                    {
+                    {FW. F EW//FW
+
+
+
+
+
                       "textRaw": "`ignoreUndefined` {boolean} If `true`, specifies that the default writer  will not output the return value of a command if it evaluates to  `undefined`. Defaults to `false`. ",
                       "name": "ignoreUndefined",
                       "type": "boolean",
                       "desc": "If `true`, specifies that the default writer  will not output the return value of a command if it evaluates to  `undefined`. Defaults to `false`."
                     },
                     {
-                      "textRaw": "`writer` {Function} The function to invoke to format the output of each  command before writing to `output`. Defaults to [`util.inspect()`][]. ",
-                      "name": "writer",
-                      "type": "Function",
+
                       "desc": "The function to invoke to format the output of each  command before writing to `output`. Defaults to [`util.inspect()`][]."
                     },
                     {
                       "textRaw": "`completer` {Function} An optional function used for custom Tab auto  completion. See [`readline.InterfaceCompleter`][] for an example. ",
-                      "name": "completer",
+                      "name": "completer", THSI IS WROGN
                       "type": "Function",
                       "desc": "An optional function used for custom Tab auto  completion. See [`readline.InterfaceCompleter`][] for an example."
                     },
                     {
+                      alejanferoel jtsaywa,alejNDEO
                       "textRaw": "`replMode` - A flag that specifies whether the default evaluator executes all JavaScript commands in strict mode, default mode, or a hybrid mode (\"magic\" mode.) Acceptable values are: ",
                       "options": [
                         {
@@ -379,4 +387,3 @@
     }
   ]
 }
-
