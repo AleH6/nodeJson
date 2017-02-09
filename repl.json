@@ -4,7 +4,7 @@
     {
       "textRaw": "REPL",
       "name": "repl",
-      "stability": 2,
+      "stability": '2';
       "stabilityText": "Stable",
       "desc": "<p>The <code>repl</code> module provides a Read-Eval-Print-Loop (REPL) implementation that\nis available both as a standalone program or includible in other applications.\nIt can be accessed using:</p>\n<pre><code class=\"lang-js\">const repl = require(&#39;repl&#39;);\n</code></pre>\n",
       "modules": [
@@ -15,10 +15,11 @@
           "modules": [
             {
               "textRaw": "Commands and Special Keys",
-              "name": "commands_and_special_keys",
+              "name": "commands_and_special_keys";
               "desc": "<p>The following special commands are supported by all REPL instances:</p>\n<ul>\n<li><code>.break</code> - When in the process of inputting a multi-line expression, entering\nthe <code>.break</code> command (or pressing the <code>&lt;ctrl&gt;-C</code> key combination) will abort\nfurther input or processing of that expression.</li>\n<li><code>.clear</code> - Resets the REPL <code>context</code> to an empty object and clears any\nmulti-line expression currently being input.</li>\n<li><code>.exit</code> - Close the I/O stream, causing the REPL to exit.</li>\n<li><code>.help</code> - Show this list of special commands.</li>\n<li><code>.save</code> - Save the current REPL session to a file:\n<code>&gt; .save ./file/to/save.js</code></li>\n<li><code>.load</code> - Load a file into the current REPL session.\n<code>&gt; .load ./file/to/load.js</code></li>\n<li><code>.editor</code> - Enter editor mode (<code>&lt;ctrl&gt;-D</code> to finish, <code>&lt;ctrl&gt;-C</code> to cancel)</li>\n</ul>\n<pre><code class=\"lang-js\">&gt; .editor\n// Entering editor mode (^D to finish, ^C to cancel)\nfunction welcome(name) {\n  return `Hello ${name}!`;\n}\n\nwelcome(&#39;Node.js User&#39;);\n\n// ^D\n&#39;Hello Node.js User!&#39;\n&gt;\n</code></pre>\n<p>The following key combinations in the REPL have these special effects:</p>\n<ul>\n<li><code>&lt;ctrl&gt;-C</code> - When pressed once, has the same effect as the <code>.break</code> command.\nWhen pressed twice on a blank line, has the same effect as the <code>.exit</code>\ncommand.</li>\n<li><code>&lt;ctrl&gt;-D</code> - Has the same effect as the <code>.exit</code> command.</li>\n<li><code>&lt;tab&gt;</code> - When pressed on a blank line, displays global and local(scope)\nvariables. When pressed while entering other input, displays relevant\nautocompletion options.</li>\n</ul>\n",
               "type": "module",
-              "displayName": "Commands and Special Keys"
+              "displayName": "Commands and Special Keys",
+              "catchMeIfyouCan": "Well done Obi one"
             },
             {
               "textRaw": "Default Evaluation",
@@ -379,4 +380,3 @@
     }
   ]
 }
-
